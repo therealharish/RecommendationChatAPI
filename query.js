@@ -6,9 +6,10 @@ require('dotenv').config()
 const openai = new OpenAI();
 openai.apiKey = process.env.OPENAI_API_KEY
 
-let query = "product: acer laptop category: electronics price: 10000 rating: 4.5"
+// let query = "product: acer laptop category: electronics price: 10000 rating: 4.5"
 
-const findItems = async() => {
+const findItems = async(query) => {
+    console.log(query)
     const pinecone = new Pinecone()
     const index = pinecone.index("amaze");
 

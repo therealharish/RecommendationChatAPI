@@ -21,7 +21,7 @@ app.post('/query', (request, response) => {
         query: body.query
     }
 
-    findItems.findItems(query)
+    findItems.findItems(query.query)
     .then(matchedProducts => {
         response.json(matchedProducts)
     })
